@@ -1,8 +1,6 @@
-﻿using Microsoft.Owin;
+﻿using System.Web.Http;
 using Owin;
-using Microsoft.Owin.Cors;
 
-[assembly: OwinStartup(typeof(Divergent.Customers.API.Startup))]
 
 namespace Divergent.Customers.API
 {
@@ -10,7 +8,11 @@ namespace Divergent.Customers.API
     {
         public void Configuration(IAppBuilder app)
         {
-            app.UseCors(CorsOptions.AllowAll);
+            var config = new HttpConfiguration();
+            config.MapHttpAttributeRoutes();
+            config.EnableCors();
+
+            app.UseWebApi(config);
         }
     }
 }
