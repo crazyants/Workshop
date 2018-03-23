@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using Microsoft.Owin.Hosting;
 
-namespace Divergent.Customers.API
+namespace Divergent.Finance.API
 {
     class Program
     {
